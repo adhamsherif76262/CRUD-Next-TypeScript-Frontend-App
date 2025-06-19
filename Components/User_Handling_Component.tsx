@@ -195,13 +195,13 @@ const handle_update_user = async (userId : string | number | undefined) => {
     <div><br /><br />
       <label style={{marginRight:"100px"}} htmlFor="ID_Input">ID</label>
 
-      <input ref={User_ID_Submit_Input_ref} type="text" placeholder='Enter User ID' name='ID_Input'/><br /><br />
+      <input ref={User_ID_Submit_Input_ref} type="text" placeholder='Enter User ID' name='ID_Input' id='ID_Input'/><br /><br />
         {/* <input ref={User_ID_Get_Input_ref} type="text"  placeholder='Enter User ID'/> */}
       <label style={{marginRight:"100px"}} htmlFor="Name_Input">Name</label>
-      <input ref={Name_Input_ref} type="text" placeholder='Enter User Name' name='Name_Input'/><br /><br />
+      <input ref={Name_Input_ref} type="text" placeholder='Enter User Name' name='Name_Input' id='Name_Input'/><br /><br />
 
       <label style={{marginRight:"100px"}} htmlFor="Age_Input">Age</label>
-      <input ref={Age_Input_ref} type="text" placeholder='Enter User Age' name='Age_Input'/><br /><br />
+      <input ref={Age_Input_ref} type="text" placeholder='Enter User Age' name='Age_Input' id='Age_Input'/><br /><br />
 
       {/* <button onClick={handle_data_retreival} style={{marginRight:"100px"}} type="button">Get Users Data</button> */}
       <button onClick={handle_form_reset} style={{marginRight:"100px"}} type="button">Reset</button>
@@ -212,7 +212,7 @@ const handle_update_user = async (userId : string | number | undefined) => {
         // Allow only numeric IDs greater than 0
         setIsValidGetID(/^\d+$/.test(value));
         }}
-        ref={User_ID_Get_Input_ref} type="text" placeholder='Enter User ID To Be Retrieved' name='User_ID_To_Be_Retrieved_Input'/><br /><br />
+        ref={User_ID_Get_Input_ref} type="text" placeholder='Enter User ID To Be Retrieved' name='User_ID_To_Be_Retrieved_Input' id='User_ID_To_Be_Retrieved_Input'/><br /><br />
       <button onClick={() => handle_get_User(User_ID_Get_Input_ref.current?.value)} disabled={!isValidGetID} style={{marginRight:"100px"}} type="button">Get A Single User</button>
       <button onClick={handle_get_All_Users} style={{marginRight:"100px"}} type="button">Get All Users</button><br /><br /><br /><br /><br />
       
@@ -222,7 +222,7 @@ const handle_update_user = async (userId : string | number | undefined) => {
         // Allow only numeric IDs greater than 0
         setIsValidUpdateID(/^\d+$/.test(value));
         }}
-        ref={User_ID_Update_Input_ref} type="text" placeholder='Enter User ID To Be Updated' name='User_ID_To_Be_Updated_Input'/><br /><br /><br /><br />
+        ref={User_ID_Update_Input_ref} type="text" placeholder='Enter User ID To Be Updated' name='User_ID_To_Be_Updated_Input' id='User_ID_To_Be_Updated_Input'/><br /><br /><br /><br />
       
       <h2 style={{textAlign:"center"}}> The Data To Be Updated</h2><br /><br /><br />
 
@@ -231,7 +231,7 @@ const handle_update_user = async (userId : string | number | undefined) => {
         // Allow  only alphabetical text
         setIsValidName(/^[a-zA-Z]+$/.test(value));
     }}
-        ref={User_Name_Input_ref} type="text" placeholder='Enter User Name To Be Updated' name='User_Name_To_Be_Updated_Input'/><br /><br />
+        ref={User_Name_Input_ref} type="text" placeholder='Enter User Name To Be Updated' name='User_Name_To_Be_Updated_Input' id='User_Name_To_Be_Updated_Input'/><br /><br />
     
     <label style={{marginRight:"100px"}} htmlFor="User_Age_To_Be_Updated_Input">Enter the new Age</label>
     <input onChange={(e) => {const value = e.target.value.trim();
@@ -239,7 +239,7 @@ const handle_update_user = async (userId : string | number | undefined) => {
         const age = Number(value);
         setIsValidAge(age >= 1 && age <= 120 && Number.isInteger(age));
     }}
-        ref={User_Age_Input_ref} type="text" placeholder='Enter User Age To Be Updated' name='User_Age_To_Be_Updated_Input'/><br /><br />
+        ref={User_Age_Input_ref} type="text" placeholder='Enter User Age To Be Updated' name='User_Age_To_Be_Updated_Input' id='User_Age_To_Be_Updated_Input'/><br /><br />
     
     
     <label style={{marginRight:"100px"}} htmlFor="User_Gender_To_Be_Updated_Input">Enter the new Gender</label>
@@ -248,7 +248,7 @@ const handle_update_user = async (userId : string | number | undefined) => {
         const gender = value.trim().toLowerCase();
         setIsValidGender(gender === "male" || gender === "female");
         }}
-        ref={User_Gender_Input_ref} type="text" placeholder='Enter User Gender To Be Updated' name='User_Gender_To_Be_Updated_Input'/><br /><br />
+        ref={User_Gender_Input_ref} type="text" placeholder='Enter User Gender To Be Updated' name='User_Gender_To_Be_Updated_Input' id='User_Gender_To_Be_Updated_Input'/><br /><br />
 
       <button onClick={() => handle_update_user(User_ID_Update_Input_ref.current?.value)} disabled={!isValidUpdateID || !isValidName || !isValidAge || !isValidGender} style={{marginRight:"100px"}} type="button">Update A Single User</button><br /><br /><br /><br />
       
@@ -258,7 +258,7 @@ const handle_update_user = async (userId : string | number | undefined) => {
         // Allow only numeric IDs greater than 0
         setIsValidDeleteID(/^\d+$/.test(value));
         }}
-        ref={User_ID_Delete_Input_ref} type="text" placeholder='Enter User ID To Be Deleted' name='User_ID_To_Be_Deleted_Input'/><br /><br />
+        ref={User_ID_Delete_Input_ref} type="text" placeholder='Enter User ID To Be Deleted' name='User_ID_To_Be_Deleted_Input' id='User_ID_To_Be_Deleted_Input'/><br /><br />
       <button onClick={() => handle_delete_User(User_ID_Delete_Input_ref.current?.value)} disabled={!isValidDeleteID} style={{marginRight:"100px"}} type="button">Delete A Single User</button>
       <button onClick={handle_delete_All_Users} style={{marginRight:"100px"}} type="button">Delete All Users</button>
     </div>
