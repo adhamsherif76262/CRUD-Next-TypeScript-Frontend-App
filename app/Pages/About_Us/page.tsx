@@ -9,8 +9,8 @@ import User_Handling_Component from '@/Components/User_Handling_Component';
 function About_Us() {
 
     const [count, setCount] = useState(0);
-    const [morethan, setmorethan] = useState(false);
-    const [lessthan, setlessthan] = useState(false);
+    const [, setmorethan] = useState(false);
+    const [, setlessthan] = useState(false);
     const Input_ref_1 = useRef<HTMLInputElement>(null)
     const Input_ref_2 = useRef<HTMLInputElement>(null)
     
@@ -69,9 +69,12 @@ function About_Us() {
     // type Any = {
     //     e : Event
     // }
-    // const handleChange = (e : Event) =>{
-    //     console.log(e.target.value)
-    // }
+    const handleChange = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        if(e.target){
+
+            console.log(e.target.value)
+        }
+    }
 
     useEffect(() => {
         if (count > 0) {
@@ -105,7 +108,7 @@ function About_Us() {
         <button className={styles.divClass} onClick={handleDecrement} type='button'>Decrement Counter</button>
         <input style={{width : "50%"}} ref={Input_ref_1} className={styles.divClass} placeholder="Displays value after click in the console"/>
         <button className={styles.divClass} onClick={handleFocus} type='button'>CLick To Focus</button>
-        {/* <input style={{width : "50%"}} ref={Input_ref_2} onChange={handleChange} className={styles.divClass} placeholder="Displays value on change in the console"/> */}
+        <input style={{width : "50%"}} ref={Input_ref_2} onChange={handleChange} className={styles.divClass} placeholder="Displays value on change in the console"/>
     </>
   )
 }
