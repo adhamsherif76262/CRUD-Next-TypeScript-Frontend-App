@@ -35,7 +35,7 @@ function User_Handling_Component() {
 
     const handle_get_All_Users = async ()=>{
         try {
-            const response = await fetch(`http://localhost:5000/users/`, {
+            const response = await fetch(`https://crud-expressjs-backend-app.onrender.com/users/`, {
                 method: "GET",
             });
             if (!response.ok) {
@@ -51,7 +51,7 @@ function User_Handling_Component() {
     
     const handle_get_User = async (userId : string | number | undefined) => {
     try {
-        const response = await fetch(`http://localhost:5000/users/${userId}`, {
+        const response = await fetch(`https://crud-expressjs-backend-app.onrender.com/users/${userId}`, {
             method: "GET",
         });
         if (!response.ok) {
@@ -76,7 +76,7 @@ function User_Handling_Component() {
     //         const newUser = { id, Name, Age };
             
     //         try {
-    //             const response = await fetch("http://localhost:5000/users", {
+    //             const response = await fetch("https://crud-expressjs-backend-app.onrender.com/users", {
     //                 method: "POST",
     //                 headers: {
     //                     "Content-Type": "application/json",
@@ -103,7 +103,7 @@ function User_Handling_Component() {
         };
         console.log(User_ID_Submit_Input_ref.current?.value)
         try {
-            const response = await fetch("http://localhost:5000/users", {
+            const response = await fetch("https://crud-expressjs-backend-app.onrender.com/users", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -134,7 +134,7 @@ const handle_update_user = async (userId : string | number | undefined) => {
     };
 
     try {
-        const response = await fetch(`http://localhost:5000/users/${userId}`, {
+        const response = await fetch(`https://crud-expressjs-backend-app.onrender.com/users/${userId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -157,7 +157,7 @@ const handle_update_user = async (userId : string | number | undefined) => {
 
     const handle_delete_User = async (userId : string | number | undefined) => {
         try {
-            const response = await fetch(`http://localhost:5000/users/${userId}`, {
+            const response = await fetch(`https://crud-expressjs-backend-app.onrender.com/users/${userId}`, {
                 method: "DELETE",
             });
 
@@ -174,7 +174,7 @@ const handle_update_user = async (userId : string | number | undefined) => {
     };
     const handle_delete_All_Users = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/users/`, {
+            const response = await fetch(`https://crud-expressjs-backend-app.onrender.com/users/`, {
                 method: "DELETE",
             });
 
